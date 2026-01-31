@@ -14,9 +14,10 @@ class HTMLNode:
 
         attributes = []
         for k, v in self.props.items():
-            attributes.append(f"{k}={v}")
+            attributes.append(f"{k}='{v}'")
 
-        return " ".join(attributes)
+        concat_attributes = " ".join(attributes)
+        return f" {concat_attributes}"
 
     def __eq__(self, other):
         return (

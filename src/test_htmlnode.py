@@ -15,6 +15,6 @@ class TestHTMLNode(unittest.TestCase):
             value="this is a link",
             props={"href": "https://bootdev.com", "target": "_blank"},
         )
-        expected_props = "href=https://bootdev.com target=_blank"
+        expected_props = " href='https://bootdev.com' target='_blank'"
         self.assertEqual(a_node.props_to_html(), expected_props)
         self.assertNotEqual(a_node, p_node)
