@@ -11,3 +11,11 @@ class ParentNode(HTMLNode):
 
         if self.children is None:
             raise ValueError("children is mandatory")
+
+        open_close_tag = (f"<{self.tag}>", f"</{self.tag}>")
+
+        child_html = []
+        for child in self.children:
+            child_html.append(child.to_html())
+
+        return open_close_tag[0] + "".join(child_html) + open_close_tag[1]
